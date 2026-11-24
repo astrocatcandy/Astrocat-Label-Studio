@@ -1,3 +1,4 @@
+import { productDisplayName } from '../../lib/productDisplayName';
 import {useEffect,useMemo,useState} from 'react';
 import type {Product,Batch} from '../../types/models';
 import {addMonths,makeBatchNumber} from '../../lib/date';
@@ -21,7 +22,7 @@ const number=useMemo(()=>product?makeBatchNumber(product.sku,productionDate,batc
       {visibleProducts.map(item => (
         <label className="label-batch-option" key={item.id}>
           <input type="radio" name="new-batch-product" checked={productId === item.id} onChange={() => setProductId(item.id)} />
-          <span><strong>{item.name}</strong><small>{item.sku}</small></span>
+          <span><strong>{productDisplayName(item.name)}</strong><small>{item.sku}</small></span>
         </label>
       ))}
     </div>
