@@ -15,3 +15,34 @@
 .unit-input{display:flex;align-items:stretch;position:relative;width:100%}
 .unit-input input{width:100%;padding-right:52px}
 .unit-suffix{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-weight:650;color:#66758d;pointer-events:none}
+
+.label-batch-picker { margin-bottom: 16px; }
+.label-batch-list { min-width: 0; margin: 0; padding: 0; border: 0; }
+.label-batch-list legend { margin-bottom: 8px; padding: 0; font-size: 13px; font-weight: 650; }
+.label-batch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  grid-auto-rows: max-content;
+  gap: 8px;
+  max-height: 20rem;
+  overflow-y: auto;
+  padding: 3px;
+}
+.label-batch-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  min-height: 68px;
+  padding: 12px;
+  border: 1px solid #dce3ef;
+  border-radius: 12px;
+  background: #f8faff;
+  cursor: pointer;
+}
+.label-batch-option:hover { border-color: #667aad; }
+.label-batch-option:has(input:checked) { border-color: #263a80; background: #e9edf9; }
+.label-batch-option:focus-within { outline: 2px solid #5269bf; outline-offset: 1px; }
+.label-batch-option input[type="radio"] { flex: none; width: 16px; height: 16px; margin: 2px 0 0; accent-color: #263a80; }
+.label-batch-option span { min-width: 0; overflow-wrap: anywhere; }
+.label-batch-option strong, .label-batch-option small { display: block; }
+.label-batch-option small { margin-top: 4px; color: #53627d; }
