@@ -1,5 +1,5 @@
 import type { CompanySettings, Nutrition, Product } from '../types/models';
-export const companyDefaults: CompanySettings = { name: 'Astrocat Candy', address: 'Slabystr. 19 · 12459 Berlin', website: 'astrocatcandy.shop', instagram: '@astrocatcandy', tiktok: '@astrocatcandy', topLine: 'TÜTE LEER? HOL DIR NACHSCHUB!', footerLine: 'HANDGEMACHT · GEFRIERGETROCKNET' };
+export const companyDefaults: CompanySettings = { name: 'Astrocat Candy', address: 'Slabystr. 19 · 12459 Berlin', website: 'astrocatcandy.shop', instagram: '@astrocatcandy', tiktok: '@astrocatcandy', topLine: 'TÜTE LEER? HOL DIR NACHSCHUB!', footerLine: 'HANDGEMACHT · GEFRIERGETROCKNET', defaultLabelOrientation: 'landscape' };
 export const emptyNutrition: Nutrition = { energyKj:'',energyKcal:'',fat:'',saturatedFat:'',carbs:'',sugar:'',fibre:'',protein:'',salt:'' };
 export const newProduct = (): Product => ({ id: crypto.randomUUID(),sku:'',name:'',category:'Früchte',netWeight:'',ingredients:'',allergens:'',vegan:false,storage:'Kühl, trocken und lichtgeschützt lagern. Nach dem Öffnen luftdicht verschließen.',shelfLifeMonths:12,nutrition:{...emptyNutrition},approval:false,createdAt:new Date().toISOString(),updatedAt:new Date().toISOString() });
 export const demoProducts = (): Product[] => {

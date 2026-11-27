@@ -1,9 +1,9 @@
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
-import type { Batch } from '../../types/models';
+import type { Batch, LabelOrientation } from '../../types/models';
 
 /** Portrait prints the original 70 x 100 mm label. Landscape rotates the *same* label 90° clockwise. */
-export type LabelOrientation = 'portrait' | 'landscape';
+export type { LabelOrientation } from '../../types/models';
 
 async function captureLabel(): Promise<HTMLCanvasElement> {
   const source = document.getElementById('label-print-surface') as HTMLElement | null;
