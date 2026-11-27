@@ -1,5 +1,7 @@
 export interface Nutrition { energyKj: string; energyKcal: string; fat: string; saturatedFat: string; carbs: string; sugar: string; fibre: string; protein: string; salt: string }
-export interface Product { id: string; sku: string; name: string; category: string; netWeight: string; ingredients: string; allergens: string; vegan: boolean; storage: string; shelfLifeMonths: number; nutrition: Nutrition; approval: boolean; createdAt: string; updatedAt: string }
+export type DietStatus = 'unknown' | 'vegan' | 'vegetarian' | 'notVegetarian';
+export type HalalStatus = 'unknown' | 'halal' | 'notHalal';
+export interface Product { id: string; sku: string; name: string; category: string; netWeight: string; ingredients: string; allergens: string; vegan: boolean; dietStatus?: DietStatus; halalStatus?: HalalStatus; storage: string; shelfLifeMonths: number; nutrition: Nutrition; approval: boolean; createdAt: string; updatedAt: string }
 export interface RawMaterialSource { originalProduct: string; manufacturerLot: string; originalBestBefore: string; notes: string }
 export interface Batch { id: string; productId: string; number: string; productionDate: string; bestBefore: string; quantity: number; createdAt: string; productSnapshot: Product; source?: RawMaterialSource; labelSnapshot?: string; slogan?: string; exportedAt?: string }
 export type LabelOrientation = 'portrait' | 'landscape';
